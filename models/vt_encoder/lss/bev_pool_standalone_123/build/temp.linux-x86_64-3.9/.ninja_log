@@ -1,0 +1,3 @@
+# ninja log v7
+0	594	1775177340960610090	/home/etri/Dooseop/Git/Online3DHDmap/models/vt_encoder/lls/bev_pool_standalone/build/temp.linux-x86_64-3.9/home/etri/Dooseop/Git/Online3DHDmap/models/vt_encoder/lls/bev_pool_standalone/src/bev_pool_cuda.o	cc935a6e7249bbd3
+0	13302	1775177340960610090	/home/etri/Dooseop/Git/Online3DHDmap/models/vt_encoder/lls/bev_pool_standalone/build/temp.linux-x86_64-3.9/home/etri/Dooseop/Git/Online3DHDmap/models/vt_encoder/lls/bev_pool_standalone/src/bev_pool.o	b9f66f6284c82f70

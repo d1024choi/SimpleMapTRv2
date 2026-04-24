@@ -1,0 +1,15 @@
+12/23/2025 08:51:26 AM ERROR:================================================================================
+12/23/2025 08:51:26 AM ERROR:ERROR OCCURRED DURING TRAINING
+12/23/2025 08:51:26 AM ERROR:================================================================================
+12/23/2025 08:51:26 AM ERROR:Traceback (most recent call last):
+  File "/home/etri/Dooseop/OmniDrive/_train.py", line 92, in main
+    (train_dataset, val_dataset), (train_loader, val_loader), (train_sampler, val_sampler) = load_datasetloader(args=args,
+  File "/home/etri/Dooseop/OmniDrive/_helper.py", line 28, in load_datasetloader
+    cfg = read_config()
+  File "/home/etri/Dooseop/OmniDrive/utils/functions.py", line 43, in read_config
+    cfg = read_json(path='./config/config.json')
+  File "/home/etri/Dooseop/OmniDrive/utils/functions.py", line 36, in read_json
+    with open(path, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: './config/config.json'
+
+12/23/2025 08:51:26 AM ERROR:================================================================================

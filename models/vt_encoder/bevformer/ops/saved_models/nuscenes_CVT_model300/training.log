@@ -1,0 +1,15 @@
+12/08/2025 09:56:27 AM ERROR:================================================================================
+12/08/2025 09:56:27 AM ERROR:ERROR OCCURRED DURING TRAINING
+12/08/2025 09:56:27 AM ERROR:================================================================================
+12/08/2025 09:56:27 AM ERROR:Traceback (most recent call last):
+  File "/home/dooseop/Pytorch/WorkingSpace/TVTF_v2p0/train.py", line 78, in main
+    (train_dataset, val_dataset), (train_loader, val_loader), (train_sampler, val_sampler) = load_datasetloader(args=args,
+  File "/home/dooseop/Pytorch/WorkingSpace/TVTF_v2p0/helper.py", line 30, in load_datasetloader
+    cfg = read_config()
+  File "/home/dooseop/Pytorch/WorkingSpace/TVTF_v2p0/utils/functions.py", line 43, in read_config
+    cfg = read_json(path='./config/config.json')
+  File "/home/dooseop/Pytorch/WorkingSpace/TVTF_v2p0/utils/functions.py", line 36, in read_json
+    with open(path, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: './config/config.json'
+
+12/08/2025 09:56:27 AM ERROR:================================================================================

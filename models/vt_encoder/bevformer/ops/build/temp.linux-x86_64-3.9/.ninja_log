@@ -1,0 +1,4 @@
+# ninja log v7
+0	3508	1766447439548459224	/home/etri/Dooseop/OmniDrive/models/bevformer/ops/build/temp.linux-x86_64-3.9/home/etri/Dooseop/OmniDrive/models/bevformer/ops/src/cpu/ms_deform_attn_cpu.o	e8016fccedc8984d
+1	12356	1766447439548459224	/home/etri/Dooseop/OmniDrive/models/bevformer/ops/build/temp.linux-x86_64-3.9/home/etri/Dooseop/OmniDrive/models/bevformer/ops/src/vision.o	15351301d9b555e5
+0	13174	1766447439548459224	/home/etri/Dooseop/OmniDrive/models/bevformer/ops/build/temp.linux-x86_64-3.9/home/etri/Dooseop/OmniDrive/models/bevformer/ops/src/cuda/ms_deform_attn_cuda.o	95f4b0113ac825d4

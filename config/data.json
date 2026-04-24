@@ -1,0 +1,90 @@
+{
+
+  "dataset_name" : "nuscenes",
+  
+  "nuscenes" : {
+
+    "version": "v1.0-trainval",
+
+    "dataset_dir": "/home/dooseop/DATASET/nuscenes/",
+
+    "map_data_type": "OnlineHDmapV2",
+    
+    "OnlineHDmap" : {
+      "train_dir": "/home/dooseop/DATASET/nuscenes/OnlineHDmap/train/",
+      "valid_dir": "/home/dooseop/DATASET/nuscenes/OnlineHDmap/valid/",
+      "map_expansion_dir": "/home/dooseop/DATASET/nuscenes/maps/expansion/",
+      "target_classes": ["divider","ped_crossing","boundary"],
+      "polyline" : {"sample_dist": 1,
+                    "num_samples": 250,
+                    "padding": false,
+                    "fixed_ptsnum_per_line": 20,
+                    "padding_value": -10000,
+                    "gt_shift_pts_pattern": "v2",
+                    "num_classes": 3,
+                    "code_size": 2}
+    },
+
+    "OnlineHDmapV2" : {
+      "train_dir": "/home/dooseop/DATASET/nuscenes/OnlineHDmapV2/train/",
+      "valid_dir": "/home/dooseop/DATASET/nuscenes/OnlineHDmapV2/valid/",
+      "map_expansion_dir": "/home/dooseop/DATASET/nuscenes/maps/expansion/",
+      "target_classes": ["divider","ped_crossing","boundary"],
+      "polyline" : {"sample_dist": 1,
+                    "num_samples": 250,
+                    "padding": false,
+                    "fixed_ptsnum_per_line": 20,
+                    "padding_value": -10000,
+                    "gt_shift_pts_pattern": "v2",
+                    "num_classes": 3,
+                    "code_size": 2}  
+    },
+
+    "image": {
+      "n_cam": 6,
+      "original_size": {"h":900, "w":1600},
+      "target_size": {"top_crop": 0, "h": 450, "w": 800},
+      "size_divisor": 32,
+      "bool_apply_img_aug": false,
+      "bool_apply_img_aug_photo": true
+    },
+
+    "bev": {
+      "bool_apply_bev_aug": false,
+      "bev_aug": [3, 2, 0, 2, 0, 0],
+      "bev_h": 200,
+      "bev_w": 100
+    },
+
+
+    "comment_1" : " for BEVFormer, pc_range = [-15.0, -30.0, -2.0, 15.0, 30.0, 2.0] ",
+    "comment_2" : " for LSS, pc_range = [-15.0, -30.0, -10.0, 15.0, 30.0, 10.0] ",
+    "__pc_range__" : [-15.0, -30.0, -2.0, 15.0, 30.0, 2.0],
+    "__voxel_size__" : [0.15, 0.15, 4.0],
+    "pc_range" : [-15.0, -30.0, -10.0, 15.0, 30.0, 10.0],
+    "voxel_size" : [0.15, 0.15, 20.0],
+    
+
+    "grid_config" : {
+      "x": [-30.0, -30.0, 0.15],
+      "y": [-15.0, -15.0, 0.15],
+      "z": [-10, 10, 20],       
+      "depth": [1.0, 35.0, 0.5]
+    },                  
+
+    "can_bus_len": 18,
+
+
+    "bool_filter_samples_in_blacklist": false,
+    "bool_verif_lidar_proj": false,
+    "bool_verif_bbox_proj": false,
+    "bool_verif_semantic_grid": false
+  },
+
+
+  "obs_len" : 3,
+  "pred_len": 0,
+  "target_frame_indices": [0]
+
+}
+

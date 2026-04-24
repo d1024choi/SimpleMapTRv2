@@ -1,0 +1,9 @@
+{
+  "Loss": {
+
+    "bce": {"alpha": -1.0,
+            "gamma": 0.0},
+    "focal": {"alpha": -1.0,
+            "gamma": 2.0}
+    }
+}
