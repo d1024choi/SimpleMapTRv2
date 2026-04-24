@@ -1,0 +1,5 @@
+# ninja log v7
+1	5027	1768361899761858824	/home/dooseop/Pytorch/Git/LLMBEV/BEVSemanticSeg_LLM/models/bevformer/ops/build/temp.linux-x86_64-cpython-39/home/dooseop/Pytorch/Git/LLMBEV/BEVSemanticSeg_LLM/models/bevformer/ops/src/cpu/ms_deform_attn_cpu.o	d54a2a2a358f3448
+1	14846	1768361899761858824	/home/dooseop/Pytorch/Git/LLMBEV/BEVSemanticSeg_LLM/models/bevformer/ops/build/temp.linux-x86_64-cpython-39/home/dooseop/Pytorch/Git/LLMBEV/BEVSemanticSeg_LLM/models/bevformer/ops/src/vision.o	20e65902d0993860
+12	14701	1768361975697407511	/home/dooseop/Pytorch/Git/LLMBEV/BEVSemanticSeg_LLM/models/bevformer/ops/build/temp.linux-x86_64-cpython-39/home/dooseop/Pytorch/Git/LLMBEV/BEVSemanticSeg_LLM/models/bevformer/ops/src/vision.o	20e65902d0993860
+12	68464	1768361975697407511	/home/dooseop/Pytorch/Git/LLMBEV/BEVSemanticSeg_LLM/models/bevformer/ops/build/temp.linux-x86_64-cpython-39/home/dooseop/Pytorch/Git/LLMBEV/BEVSemanticSeg_LLM/models/bevformer/ops/src/cuda/ms_deform_attn_cuda.o	4c9c1133f1b4a713

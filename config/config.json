@@ -1,0 +1,11 @@
+{
+  "app_mode" : "OnlineHDmap",
+  "model_name" : "Scratch",
+  "ddp" : false,
+
+  "bool_verif_lidar_proj" : false,
+
+  "supported_models" : ["Scratch"],
+  "supported_app_modes" : ["OnlineHDmap"],
+  "supported_datasets" : {"nuscenes": ["loader_typeA", "loader_typeB", "loader_typeC"]}
+}

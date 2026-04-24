@@ -1,0 +1,133 @@
+{
+
+  "train" : {
+    "bool_mixed_precision": false
+  },
+
+
+  "Scratch" : {
+    "loader_path" : "dataset.NuscenesDataset.loader_typeA",
+    "collate_fn" : "utils.collate.seq_collate_OnlineHDmap",
+    "solver_path" : "optimization.Scratch_solver.Solver",
+    
+    "img_backbone_type": "resnet50",
+    "depthnet_type": "depthnet",
+    "vt_encoder_type": "lss",
+    "map_decoder_type": "maptr",
+
+    "aux_tasks": {
+      "depth": true,
+      "pv_seg": true,
+      "bev_seg": true,
+      "seg_classes": 1,
+      "one2many": {"flag": true, "k_one2many": 6, "num_vec_one2many": 300}
+    },
+
+    "use_grid_mask": true,
+    "h_dim": 256
+  },
+
+
+  "Img_Backbone" : {
+    "resnet50" : {"model_name": "resnet50", 
+                  "target_layers": ["reduction_4"],
+                  "frozen_stages": 1,
+                  "norm_eval": true,
+                  "norm_cfg": {"type": "BN", "requires_grad": false}
+                },
+    "resnet101" : {"model_name": "resnet101", 
+                  "target_layers": ["reduction_1", "reduction_2", "reduction_3", "reduction_4"],
+                  "frozen_stages": 1,
+                  "norm_eval": true,
+                  "norm_cfg": {
+                    "type": "BN",
+                    "requires_grad": false}  
+    },
+    "skip_fpn": false
+  },  
+
+
+  "Aux_tasks" : {
+    "depthnet" : {"model_name": "depthnet",
+                  "use_dcn": false,
+                  "with_cp": false,
+                  "aspp_mid_channels": 96,
+                  "feat_down_sample": 32,
+                  "loss_depth_weight": 3.0,
+                  "only_depth": true},
+    "pvsegnet" : {"model_name": "pvsegnet",
+                  "feat_down_sample": 32,
+                  "loss_pvseg_weight": 2.0,
+                  "pos_weight": 1.0
+                },
+    "bevsegnet" : {"model_name": "bevsegnet",
+                  "feat_down_sample": 32,
+                  "loss_bevseg_weight": 1.0,
+                  "pos_weight": 4.0
+                }
+  },
+
+  "VTEncoder" : {
+    "bevformer": {
+      "num_z_candi": 4,
+      "repeat": 1
+    },
+    "lss": {},
+    "use_can_bus": false,
+    "position_embedding_type": "learned"
+  },
+
+
+  "MapDecoder" : {
+    "maptr": {
+      "num_layers": 6,
+      "embed_dims": 256,
+      "num_heads": 8,
+      "ffn_channels": 512,
+      "ffn_drop": 0.1,
+      "attn_drop": 0.1,
+      "num_levels": 1,
+      "num_points": 4,
+      "return_intermediate": true,
+      "query_embed_type": "instance_pts",
+      "num_vec": 50,
+      "num_query": 900,
+      "num_reg_fcs": 2,
+      "with_box_refine": true,
+      "transform_method": "minmax"
+    },
+    "maptrv2": {}
+  
+  },
+
+
+   "Optimizer" : {
+    "type": "adamw",
+    "learning_rate": 0.0005,
+    "backbone_lr_mult": 0.1,
+    "weight_decay": 0.01,
+    "bs" : 2,
+    "n_cam" : 6
+   },
+
+
+   "LR_Scheduler" : {
+    "type": "OnecycleLR",
+    "visualization": false,
+    "CosineAnnealing" : {"steps_per_epoch": 1000,
+                        "epochs": 100,
+                        "warmup": "linear",
+                        "warmup_iters": 500,
+                        "warmup_ratio": 0.3333,
+                        "min_lr_ratio": 1e-3,
+                        "base_lr": 0.0005},
+   
+    "OnecycleLR" : {"max_lr": 0.0006, 
+                    "div_factor": 4.0, 
+                    "final_div_factor": 25.00,
+                    "pct_start": 0.05, 
+                    "steps_per_epoch": 1000, 
+                    "epochs": 24}
+    }
+
+}

@@ -1,0 +1,19 @@
+# requirements_standalone_lss.txt
+#
+# Dependencies for standalone_lss_transform.py
+# Zero reliance on mmdet3d / mmcv / mmdet.
+#
+# Complete setup instructions: INSTALL_standalone_lss.md
+#
+# Install order:
+#   1. torch + CUDA  (Step 2 in INSTALL guide – special wheel URL)
+#   2. bev_pool_standalone  (Step 3 – build from source in bev_pool_standalone/)
+#   3. pip install -r requirements_standalone_lss.txt  (this file)
+
+# ── Runtime dependencies ──────────────────────────────────────────────────────
+numpy>=1.21
+
+# ── Optional (validation / data loading) ─────────────────────────────────────
+scipy>=1.7.0
+Pillow>=9.0.0
+opencv-python>=4.5.0
